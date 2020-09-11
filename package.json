@@ -1,0 +1,34 @@
+{
+  "name": "hapi-lab-shim",
+  "version": "0.0.1",
+  "description": "A very (very!) simple shim for running @hapi/lab tests in the browser",
+  "main": "hapi-lab-shim.js",
+  "scripts": {
+    "test": "node ./hapi-lab-shim.js",
+    "clean": "rm -rf node_modules yarn.lock package-lock.json",
+    "reset": "npm run clean && npm i && npm test",
+    "prettier": "prettier --write --no-semi --single-quote *.js",
+    "repo-tag": "REPO_VERSION=`node -e \"console.log(require('./package').version)\"`; echo TAG: v$REPO_VERSION && git commit -a -m v$REPO_VERSION && git push && git tag v$REPO_VERSION && git push --tags;",
+    "repo-publish": "npm run clean && npm i && npm run prettier && npm test && npm run repo-tag && npm publish --registry http://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjrodger/hapi-lab-shim.git"
+  },
+  "keywords": [
+    "hapi",
+    "lab",
+    "shim",
+    "web",
+    "browser"
+  ],
+  "author": "Richard Rodger @rjrodger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rjrodger/hapi-lab-shim/issues"
+  },
+  "homepage": "https://github.com/rjrodger/hapi-lab-shim#readme",
+  "devDependencies": {
+    "prettier": "^2.1.1"
+  }
+}
