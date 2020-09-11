@@ -1,6 +1,6 @@
 {
   "name": "hapi-lab-shim",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A very (very!) simple shim for running @hapi/lab tests in the browser",
   "main": "hapi-lab-shim.js",
   "scripts": {
